@@ -1,56 +1,67 @@
-# 1. Clonar el repositorio
+Instalación del Proyecto — API Huerto EVA3
+1️⃣ Clonar el repositorio
 git clone https://github.com/JoaquinMun/api_huerto_Eva3.git
+cd api_huerto_Eva3
 
+2️⃣ Instalar NestJS CLI (si no está instalado)
+npm install -g @nestjs/cli
 
-# NestJS CLI (si no está instalado)
-npm i -g @nestjs/cli
-
-# Dependencias principales del proyecto
+3️⃣ Instalar dependencias del proyecto
 npm install
 
-# TypeORM + MySQL
+4️⃣ Dependencias adicionales
+🗄️ TypeORM + MySQL
 npm install typeorm mysql2 @nestjs/typeorm
 
-# Dotenv para variables de entorno
+🔐 Autenticación (JWT + Passport)
+npm install @nestjs/jwt passport-jwt @nestjs/passport passport jsonwebtoken ms
+
+📄 Variables de entorno
 npm install dotenv
 
-# Validación y DTOs
+✔️ DTOs + Validación
 npm install class-validator class-transformer
 
-# Swagger (documentación automática)
+📘 Swagger (Documentación automática)
 npm install @nestjs/swagger swagger-ui-express
 
-# Para compilar y levantar el proyecto
+🛠️ Dependencias de desarrollo
 npm install --save-dev ts-node typescript @types/node
 
-#OJO
+5️⃣ Configurar archivo .env
+
+(NO subirlo a GitHub)
 
 DB_TYPE=mysql
 DB_HOST=127.0.0.1
-DB_PORT=3307   # o 3306 según tu XAMPP
+DB_PORT=3307      # o el puerto ue quires entrar (predterminado viene con la 3307)
 DB_USERNAME=root
 DB_PASSWORD=
 DB_NAME=huerto_db
+
 PORT=3000
 NODE_ENV=development
 
-#Levantar el servidor Ejecuta:
+JWT_SECRET=super_secret_key
+JWT_EXPIRES_IN=3600s
 
+6️⃣ Levantar el servidor
 npm run start:dev
 
-#Si todo está OK deberías ver:
-
+7️⃣ Si todo está OK deberías ver:
 Aplicación corriendo en: http://localhost:3000
-Swagger UI: http://localhost:3000/docs
+Swagger UI disponible en: http://localhost:3000/docs
 
-
-
-
-
-Estructura 
+📁 Estructura del proyecto
 src/
  ├── app.module.ts
  ├── main.ts
+ ├── auth/
+ │     ├── auth.module.ts
+ │     ├── auth.service.ts
+ │     ├── auth.controller.ts
+ │     ├── strategies/jwt.strategy.ts
+ │     └── guards/jwt-auth.guard.ts
  ├── usuarios/
  │     ├── usuarios.module.ts
  │     ├── usuarios.service.ts
@@ -60,9 +71,3 @@ src/
  ├── categorias/
  ├── ventas/
  └── detalle-venta/
-
-.gitignore
-.env  (NO subir)
-package.json
-nest-cli.json
-tsconfig.json
