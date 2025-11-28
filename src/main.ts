@@ -16,10 +16,12 @@ async function bootstrap() {
     }),
   );
 
+  // SWAGGER
   const config = new DocumentBuilder()
     .setTitle('API Productos')
     .setDescription('Documentación y pruebas de la API de productos')
     .setVersion('1.0.0')
+    .addBearerAuth()
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
