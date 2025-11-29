@@ -105,6 +105,98 @@ Si todo está OK, la aplicación correrá en:
 
 ---
 
+
+#Pruebas en postman
+
+1) Crear Usuario
+
+POST
+http://localhost:3000/api/v1/usuarios
+
+📥 Body JSON
+---
+{
+  "nombre": "Joaquín",
+  "apellido": "Muñoz",
+  "email": "joaquin@test.com",
+  "password": "123456"
+}
+---
+2) Crear Categoría
+
+ POST
+http://localhost:3000/api/v1/categorias
+
+ Body JSON
+---
+{
+  "nombre_categoria": "Frutas",
+  "descripcion_categoria": "Frutas frescas de temporada"
+}
+---
+3) Crear Producto
+
+ POST
+http://localhost:3000/api/v1/productos
+
+Body JSON
+---
+{
+  "nombre_producto": "Manzana Roja",
+  "descripcion_producto": "Manzana fresca y dulce",
+  "precio": 500,
+  "stock": 100,
+  "categoriaId": 1
+}
+---
+4) Crear Venta  (IMPORTANTE)
+⚠️ IMPORTANTE
+NO envíes ventaId
+usuarioId debe existir
+productoId debe existir
+Los detalles van dentro del array detalles[]
+
+POST
+http://localhost:3000/api/v1/ventas
+
+
+
+📥 Body JSON
+---
+{
+  "usuarioId": 1,
+  "fecha_venta": "2025-11-29T15:00:00",
+  "total": 1500,
+  "estado": "pendiente",
+  "metodo_pago": "efectivo",
+  "detalles": [
+    {
+      "productoId": 1,
+      "cantidad": 3,
+      "subtotal": 1500
+    }
+  ]
+}
+---
+5) Crear Detalle Venta (opcional)
+
+POST
+http://localhost:3000/api/v1/detalle-venta
+
+ Body JSON
+---
+{
+  "ventaId": 1,
+  "productoId": 1,
+  "cantidad": 3,
+  "subtotal": 1500
+}
+---
+
+y para obtener solo cambie el "post" por el "get"
+
+
+
 ## 📁 Estructura del proyecto
 
 ```
@@ -133,4 +225,4 @@ src/
 
 ---
 
-Si necesitas agregar iconos, colores, badges o imágenes, ¡dímelo y lo hago aún más pro! 🚀
+
