@@ -63,6 +63,13 @@ npm install @nestjs/swagger swagger-ui-express
 npm install --save-dev ts-node typescript @types/node
 ```
 
+## Test
+
+```
+npm install --save-dev supertest @types/supertest
+npm install --save-dev cross-env
+```
+
 ---
 
 ## 5️⃣ Configurar archivo `.env`
@@ -204,6 +211,7 @@ Si todo está OK, la aplicación correrá en:
 ## Obtener Datos (GET)
 
 Para obtener la información, simplemente cambia el método `POST` por `GET` en la URL correspondiente.
+Para Eliminar la información, simplemente cambia el método `POST` por `delete` en la URL + / {id} <-- la id que desea elimina ejemplo: /api/v1/productos/{id} (igual en el Swagger se especifica todo mejor).
 
 
 
