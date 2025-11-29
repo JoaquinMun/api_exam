@@ -106,41 +106,44 @@ Si todo está OK, la aplicación correrá en:
 ---
 
 
-#Pruebas en postman
+# Pruebas en Postman
 
-1) Crear Usuario
+## Crear Usuario
+**Método:** `POST`  
+**URL:** `http://localhost:3000/api/v1/usuarios`
 
-POST
-http://localhost:3000/api/v1/usuarios
-
-📥 Body JSON
----
+** Body JSON**
+```json
 {
   "nombre": "Joaquín",
   "apellido": "Muñoz",
   "email": "joaquin@test.com",
   "password": "123456"
 }
----
-2) Crear Categoría
+```
 
- POST
-http://localhost:3000/api/v1/categorias
-
- Body JSON
 ---
+
+## Crear Categoría
+**Método:** `POST`  
+**URL:** `http://localhost:3000/api/v1/categorias`
+
+* Body JSON**
+```json
 {
   "nombre_categoria": "Frutas",
   "descripcion_categoria": "Frutas frescas de temporada"
 }
----
-3) Crear Producto
+```
 
- POST
-http://localhost:3000/api/v1/productos
-
-Body JSON
 ---
+
+## Crear Producto
+**Método:** `POST`  
+**URL:** `http://localhost:3000/api/v1/productos`
+
+** Body JSON**
+```json
 {
   "nombre_producto": "Manzana Roja",
   "descripcion_producto": "Manzana fresca y dulce",
@@ -148,21 +151,22 @@ Body JSON
   "stock": 100,
   "categoriaId": 1
 }
+```
+
 ---
-4) Crear Venta  (IMPORTANTE)
-⚠️ IMPORTANTE
-NO envíes ventaId
-usuarioId debe existir
-productoId debe existir
-Los detalles van dentro del array detalles[]
 
-POST
-http://localhost:3000/api/v1/ventas
+## Crear Venta (IMPORTANTE ⚠️)
+**Método:** `POST`  
+**URL:** `http://localhost:3000/api/v1/ventas`
 
+**⚠️ Importante:**  
+- No envíes `ventaId`.  
+- `usuarioId` debe existir.  
+- `productoId` debe existir.  
+- Los detalles van dentro del array `detalles[]`.
 
-
-📥 Body JSON
----
+**📥 Body JSON**
+```json
 {
   "usuarioId": 1,
   "fecha_venta": "2025-11-29T15:00:00",
@@ -177,23 +181,29 @@ http://localhost:3000/api/v1/ventas
     }
   ]
 }
----
-5) Crear Detalle Venta (opcional)
+```
 
-POST
-http://localhost:3000/api/v1/detalle-venta
-
- Body JSON
 ---
+
+## Crear Detalle Venta (opcional)
+**Método:** `POST`  
+**URL:** `http://localhost:3000/api/v1/detalle-venta`
+
+** Body JSON**
+```json
 {
   "ventaId": 1,
   "productoId": 1,
   "cantidad": 3,
   "subtotal": 1500
 }
+```
+
 ---
 
-y para obtener solo cambie el "post" por el "get"
+## Obtener Datos (GET)
+
+Para obtener la información, simplemente cambia el método `POST` por `GET` en la URL correspondiente.
 
 
 
