@@ -14,15 +14,13 @@ export class AuthService {
   async register(data: any) {
   const { nombre, email, password, rol } = data;
 
-  const hashed = await bcrypt.hash(password, 10);
-
   return await this.usuariosService.create({
     nombre,
     email,
-    password: hashed,
+    password,
     rol,
   });
-}
+} 
 
   // Validar credenciales
   async validateUser(email: string, pass: string) {
@@ -44,6 +42,7 @@ export class AuthService {
 
   // Login validar y generar token
   async login(email: string, password: string) {
+
     const user = await this.validateUser(email, password);
 
     const payload = {
