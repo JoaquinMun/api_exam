@@ -1,6 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
+// 👇 1. Imports necesarios para archivos estáticos
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 
 import { ProductosModule } from './productos/productos.module';
 import { UsuariosModule } from './usuarios/usuarios.module';
@@ -21,6 +24,11 @@ import { AppService } from './app.service';
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
 
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'public'),
+      serveRoot: '/public',
+    }),
+
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: process.env.DB_HOST,
@@ -29,7 +37,7 @@ import { AppService } from './app.service';
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
       entities: [Usuarios, Productos, Categorias, Ventas, DetalleVenta],
-      dropSchema: process.env.NODE_ENV === 'test', 
+      dropSchema: process.env.NODE_ENV === 'test',
       synchronize: true,
     }),
 
