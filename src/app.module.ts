@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 
+import { join } from 'path';
+
 import { ProductosModule } from './productos/productos.module';
 import { UsuariosModule } from './usuarios/usuarios.module';
 import { CategoriasModule } from './categorias/categorias.module';
@@ -29,7 +31,7 @@ import { AppService } from './app.service';
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
       entities: [Usuarios, Productos, Categorias, Ventas, DetalleVenta],
-      dropSchema: process.env.NODE_ENV === 'test', 
+      dropSchema: process.env.NODE_ENV === 'test',
       synchronize: true,
     }),
 
