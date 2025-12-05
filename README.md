@@ -3,7 +3,7 @@
 ## 1️⃣ Clonar el repositorio
 
 ```
-git clone https://github.com/JoaquinMun/api_huerto_Eva3.git
+git clone https://github.com/JoaquinMun/api_exam.git
 cd api_exa
 ```
 
