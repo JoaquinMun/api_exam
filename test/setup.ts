@@ -45,6 +45,9 @@ beforeAll(async () => {
   // conexión a la base de datos
   const dataSource = moduleFixture.get<DataSource>(DataSource);
 
+  // Sincronizar BD para garantizar que existan todas las tablas
+await dataSource.synchronize(true);
+
 
   // Limpiar tablas (en el orden correcto para evitar FK errors)
   await dataSource.query('SET FOREIGN_KEY_CHECKS = 0;');
