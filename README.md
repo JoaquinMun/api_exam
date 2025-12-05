@@ -4,7 +4,7 @@
 
 ```
 git clone https://github.com/JoaquinMun/api_huerto_Eva3.git
-cd api_huerto_Eva3
+cd api_exa
 ```
 
 ---
