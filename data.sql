@@ -16,6 +16,13 @@ http://localhost:3000/api/v1/auth/register
   "rol": "empleado"
 }
 
+{
+  "nombre": "Administrador Prueba",
+  "email": "admin@gmail.com",
+  "password": "admin123",
+  "rol": "admin"
+}
+
   { "nombre": "Valentina Rojas", "email": "valentina.rojas@gmail.com", "password": "valentina123", "rol": "cliente" },
   { "nombre": "Sebastián Muñoz", "email": "sebastian.munoz@gmail.com", "password": "sebastian123", "rol": "cliente" },
   { "nombre": "Camila Fernández", "email": "camila.fernandez@gmail.com", "password": "camila123", "rol": "cliente" },
@@ -25,133 +32,38 @@ http://localhost:3000/api/v1/auth/register
 
 
 --Pegar en SQL de xampp
-  INSERT INTO categorias (nombre_categoria, descripcion_categoria) VALUES
-  ('Abarrotes', 'Productos básicos como arroz, fideos, legumbres, harina, azúcar y aceite'),
-  ('Bebidas', 'Bebidas gaseosas, jugos, aguas minerales y energéticas'),
-  ('Snacks', 'Papas fritas, ramitas, galletas, chocolates y confites'),
-  ('Lácteos', 'Leche, yogures, mantequilla, quesos y otros derivados'),
-  ('Carnes y Embutidos', 'Longanizas, salchichas, jamón, vienesas y carnes refrigeradas'),
-  ('Panadería', 'Pan, hallullas, marraquetas, queques y productos horneados'),
-  ('Artículos de Limpieza', 'Detergentes, cloro, esponjas, lavalozas y productos de aseo'),
-  ('Higiene Personal', 'Shampoo, desodorante, jabón, pasta dental, papel higiénico'),
-  ('Congelados', 'Helados, verduras congeladas, mariscos y productos listos'),
-  ('Mascotas', 'Comida para perros y gatos, snacks y arena sanitaria'),
-  ('Licores', 'Cervezas, vinos, piscos y otros alcoholes permitidos'),
-  ('Frutas y Verduras', 'Productos frescos de estación'),
-  ('Cigarros y Filtros', 'Cigarrillos, encendedores, fósforos'),
-  ('Farmacia Básica', 'Medicamentos sin receta, curitas y analgésicos');
+INSERT INTO categorias (nombre_categoria, descripcion_categoria) VALUES
+('Frutas Frescas', 'Nuestra selección de frutas frescas ofrece una experiencia directa del campo a Atu hogar. Estas frutas se cultivan y cosechan en el punto óptimo de madurez para asegurar su sabor y frescura. Disfruta de una variedad de frutas de temporada que aportan vitaminas y nutrientes esenciales a tu dieta diaria. Perfectas para consumir solas, en ensaladas o como ingrediente principal en postres y smoothies.'),
+
+('Verduras Orgánicas', 'Descubre nuestra gama de verduras orgánicas, cultivadas sin el uso de pesticidas ni químicos, garantizando un sabor auténtico y natural. Cada verdura es
+seleccionada por su calidad y valor nutricional, ofreciendo una excelente fuente de vitaminas, minerales y fibra. Ideales para ensaladas, guisos y platos saludables, nuestras
+verduras orgánicas promueven una alimentación consciente y sostenible.'),
+
+('Productos Orgánicos', 'Nuestros productos orgánicos están elaborados con ingredientes naturales y procesados de manera responsable para mantener sus beneficios saludables. Desde aceites y miel hasta granos y semillas, ofrecemos una selección que apoya un estilo de vida saludable y respetuoso con el medio ambiente. Estos productos son perfectos para quienes buscan opciones alimenticias que aporten bienestar sin comprometer el sabor ni la calidad.'),
+
+('Productos Lácteos', 'Los productos lácteos de HuertoHogar provienen de granjas locales que se dedican a la producción responsable y de calidad. Ofrecemos una gama de leches, yogures y otros derivados que conservan su frescura y sabor auténtico. Ricos en calcio y nutrientes esenciales, nuestros lácteos son perfectos para complementar una dieta equilibrada, proporcionando el mejor sabor y nutrición para toda la familia.');
 
 
-  INSERT INTO productos (nombre_producto, descripcion_producto, precio, stock, categoriaIdCategoria) VALUES
-  ('Arroz Grado 1 1kg', 
-  'Arroz de alta calidad, ideal para preparaciones diarias como guisos, acompañamientos y comidas familiares. Se cocina de manera pareja y mantiene una textura suave y esponjosa, convirtiéndose en un básico indispensable en cualquier hogar.', 
-  1200, 40, 1),
 
-  ('Fideos Spaghetti 400g', 
-  'Spaghetti de trigo de cocción rápida, perfectos para comidas rápidas y económicas. Mantienen su forma y consistencia al cocinarse, siendo ideales para combinar con salsas, carnes, verduras o simplemente con mantequilla.', 
-  900, 50, 1),
+INSERT INTO productos (nombre_producto, descripcion_producto, precio, stock, categoriaIdCategoria) VALUES
+('Manzanas Fuji', 'Manzanas Fuji crujientes y dulces, cultivadas en el Valle del Maule. Perfectas para meriendas saludables o como ingrediente en postres. Estas manzanas
+son conocidas por su textura firme y su sabor equilibrado entre dulce y ácido.', 1200, 150, 1),
 
-  ('Coca-Cola 1.5L', 
-  'Bebida gaseosa clásica de sabor cola, refrescante y reconocida mundialmente. Ideal para compartir en comidas familiares, celebraciones o simplemente para disfrutar en cualquier momento del día.', 
-  1800, 25, 2),
+('Naranjas Valencia', 'Jugosas y ricas en vitamina C, estas naranjas Valencia son ideales para zumos frescos y refrescantes. Cultivadas en condiciones climáticas óptimas que aseguran su dulzura y jugosidad.', 1000, 200, 1),
 
-  ('Papas Fritas Lays 140g', 
-  'Papas fritas crujientes con un sabor irresistible, elaboradas con papas seleccionadas y fritas hasta obtener una textura perfecta. Son un snack ideal para compartir, ver una película o acompañar bebidas.', 
-  1500, 35, 3),
+('Plátanos Cavendish', 'Plátanos maduros y dulces, perfectos para el desayuno o como snack energético. Estos plátanos son ricos en potasio y vitaminas, ideales para mantener una dieta equilibrada.', 800, 250, 1),
 
-  ('Leche Entera 1L', 
-  'Leche líquida de sabor suave y textura cremosa, proveniente de vacas seleccionadas. Aporta calcio y vitaminas esenciales, siendo perfecta para el desayuno, preparaciones de cocina o el consumo diario.', 
-  1100, 30, 4),
+('Zanahorias Orgánicas', 'Zanahorias crujientes cultivadas sin pesticidas en la Región de O\'Higgins. Excelente fuente de vitamina A y fibra, ideales para ensaladas, jugos o como snack saludable.', 900, 100, 2),
 
-  ('Yoghurt Batido Frutilla 155g', 
-  'Yoghurt cremoso con sabor a frutilla, elaborado con leche fresca y cultivos vivos. Es una opción ideal como snack saludable, acompañamiento del desayuno o colación para niños y adultos.', 
-  650, 60, 4),
+('Espinacas Frescas', 'Espinacas frescas y nutritivas, perfectas para ensaladas y batidos verdes. Estas espinacas son cultivadas bajo prácticas orgánicas que garantizan su calidad y valor nutricional.', 700, 80, 2),
 
-  ('Salchichas Vienesas Pack 12u', 
-  'Tradicionales salchichas tipo vienesa, listas para cocinar a la plancha, al agua o en microondas. Tienen un sabor suave y una textura firme, ideales para hot dogs, completos u otras preparaciones rápidas.', 
-  1700, 22, 5),
+('Pimientos Tricolores', 'Pimientos rojos, amarillos y verdes, ideales para salteados y platos coloridos. Ricos en antioxidantes y vitaminas, estos pimientos añaden un toque vibrante y saludable a cualquier receta.', 1500, 120, 2),
 
-  ('Pan Hallulla Bolsa 10u', 
-  'Pan fresco de textura suave y miga compacta, perfecto para el desayuno o la once. Su versatilidad permite acompañarlo con dulce, mantequilla, quesos o embutidos, siendo uno de los panes preferidos del consumo diario.', 
-  1800, 15, 6),
+('Miel Orgánica', 'Miel pura y orgánica producida por apicultores locales. Rica en antioxidantes y con un sabor inigualable, perfecta para endulzar de manera natural tus comidas y bebidas.', 5000, 50, 3),
 
-  ('Detergente Líquido 1L', 
-  'Detergente líquido concentrado que remueve manchas difíciles y deja un aroma agradable en la ropa. Rinde múltiples lavados y es compatible con lavadoras automáticas o lavado manual.', 
-  2200, 18, 7),
+('Quinua Orgánica', 'Quinua orgánica de alta calidad, ideal para platos saludables y nutritivos. Excelente fuente de proteína vegetal y minerales esenciales.', 3000, 60, 3),
 
-  ('Shampoo Familiar 750ml', 
-  'Shampoo de uso diario con fórmula suave que limpia profundamente el cabello y el cuero cabelludo. Deja una sensación fresca, un aroma agradable y un acabado sedoso, apto para toda la familia.', 
-  2500, 20, 8),
-
-  ('Helado de Vainilla 1L', 
-  'Helado cremoso de vainilla elaborado con ingredientes de calidad. Ideal para postres, celebraciones o para disfrutar en días calurosos. Su textura suave y sabor clásico lo hacen un producto muy popular.', 
-  3200, 12, 9),
-
-  ('Comida para Perro 1kg', 
-  'Alimento seco para perros adultos, formulado con nutrientes esenciales que contribuyen a la salud del pelaje, los dientes y la energía diaria. Su mezcla equilibrada lo convierte en una opción confiable para mascotas.', 
-  2500, 14, 10),
-
-  ('Cerveza Cristal Lata 350ml', 
-  'Cerveza lager chilena de sabor suave, refrescante y fácil de beber. Ideal para compartir en reuniones, asados o simplemente para disfrutar bien fría después del trabajo.', 
-  1000, 48, 11),
-
-  ('Plátano 1kg', 
-  'Fruta fresca de primera calidad, rica en potasio y de sabor naturalmente dulce. Es perfecta para consumir sola, en batidos o como parte de un desayuno saludable. Producto siempre presente en los hogares chilenos.', 
-  1300, 20, 12),
-
-  ('Encendedor Bic', 
-  'Encendedor de alta duración, seguro y confiable, ideal para uso diario en el hogar. Fabricado con materiales resistentes y una llama estable, es uno de los productos más reconocidos del mercado.', 
-  700, 40, 13),
-
-  ('Aceite de Girasol 1L',
-  'Aceite vegetal refinado ideal para freír, saltear y aderezar ensaladas. Sabor neutro y gran durabilidad.', 
-  2200, 35, 1),
-
-  ('Jugo de Naranja 1L',
-  'Jugo natural de naranja, sin preservantes, ideal para el desayuno o para refrescarse en cualquier momento del día.', 
-  1500, 40, 2),
-
-
-  ('Queso Mantecoso 200g',
-  'Queso semi-blando de sabor suave y cremoso, ideal para sándwiches, tablas o cocinar.', 
-  1800, 30, 4),
-
-  ('Jamón Cocido 250g',
-  'Jamón de cerdo cocido, bajo en grasa, ideal para sándwiches y comidas rápidas.', 
-  2200, 20, 5),
-
-  ('Pan Integral 500g',
-  'Pan integral rico en fibra, perfecto para desayunos saludables y sándwiches.', 
-  1500, 25, 6),
-
-  ('Detergente en Polvo 1kg',
-  'Detergente concentrado para ropa, potente contra manchas difíciles y con aroma fresco.', 
-  2000, 30, 7),
-
-  ('Pasta Dental 100ml',
-  'Pasta dental con flúor para prevenir caries y mantener dientes y encías saludables.', 
-  900, 50, 8),
-
-  ('Helado de Chocolate 1L',
-  'Helado cremoso con intenso sabor a chocolate, ideal para postres y reuniones familiares.', 
-  3200, 15, 9),
-
-  ('Arena Sanitaria para Gatos 5kg',
-  'Arena aglomerante y absorbente, mantiene el olor bajo control y fácil de limpiar.', 
-  4500, 20, 10),
-
-  ('Vino Tinto Cabernet Sauvignon 750ml',
-  'Vino tinto chileno con cuerpo, ideal para acompañar carnes y cenas especiales.', 
-  5500, 18, 11),
-
-  ('Manzana Roja 1kg',
-  'Fruta fresca, dulce y jugosa, perfecta para consumo directo o en preparaciones culinarias.', 
-  2000, 30, 12),
-
-
-  ('Paracetamol 500mg 10u',
-  'Medicamento analgésico y antipirético, útil para aliviar dolores leves y fiebre.', 
-  1200, 50, 14);
+('Leche Entera', 'Leche entera fresca proveniente de granjas locales. Rica en calcio y nutrientes esenciales, perfecta para una dieta equilibrada.', 1200, 90, 4);
 
 
 
@@ -190,139 +102,138 @@ INSERT INTO ventas (fecha_venta, total, estado, metodo_pago, usuarioIdUsuario) V
 ('2025-12-11 13:25:00', 0, 'completada', 'efectivo', 2),
 ('2025-12-12 16:10:00', 0, 'completada', 'efectivo', 3);
 
--- Insertar detalle_venta para todas las ventas
+-- Insertar detalle_venta para todas las ventas 
   INSERT INTO detalle_venta (cantidad, subtotal, ventaIdVenta, productoIdProducto) VALUES
   -- Venta 1 (28/11 - Mañana)
   (2, 0, 1, 1),   -- Arroz 2kg
-  (1, 0, 1, 3),   -- Coca-Cola 1.5L
-  (1, 0, 1, 5),   -- Leche 1L
-  (1, 0, 1, 8),   -- Pan Hallulla
+  (1, 0, 1, 2),   -- Coca-Cola 1.5L
+  (1, 0, 1, 3),   -- Leche 1L
+  (1, 0, 1, 4),   -- Pan Hallulla
 
   -- Venta 2 (28/11 - Tarde)
-  (3, 0, 2, 4),   -- Papas Fritas 3 bolsas
-  (2, 0, 2, 13),  -- Cerveza 2 latas
-  (1, 0, 2, 15),  -- Encendedor
+  (3, 0, 2, 5),   -- Papas Fritas 3 bolsas
+  (2, 0, 2, 6),  -- Cerveza 2 latas
+  (1, 0, 2, 7),  -- Encendedor
 
   -- Venta 3 (29/11 - Mañana)
-  (1, 0, 3, 6),   -- Yoghurt
-  (2, 0, 3, 8),   -- Pan Hallulla 2 bolsas
-  (1, 0, 3, 14),  -- Plátano 1kg
-  (1, 0, 3, 27),  -- Paracetamol
+  (1, 0, 3, 8),   -- Yoghurt
+  (2, 0, 3, 9),   -- Pan Hallulla 2 bolsas
+  (1, 0, 3, 4),  -- Plátano 1kg
+  (1, 0, 3, 2),  -- Paracetamol
 
   -- Venta 4 (29/11 - Tarde)
-  (1, 0, 4, 7),   -- Salchichas
-  (1, 0, 4, 11),  -- Helado Vainilla
-  (2, 0, 4, 13),  -- Cerveza 2 latas
+  (1, 0, 4, 3),   -- Salchichas
+  (1, 0, 4, 2),  -- Helado Vainilla
+  (2, 0, 4, 7),  -- Cerveza 2 latas
 
   -- Venta 5 (30/11 - Noche)
   (1, 0, 5, 9),   -- Detergente Líquido
-  (1, 0, 5, 10),  -- Shampoo
-  (1, 0, 5, 12),  -- Comida Perro
-  (1, 0, 5, 25),  -- Vino Tinto
+  (1, 0, 5, 1),  -- Shampoo
+  (1, 0, 5, 5),  -- Comida Perro
+  (1, 0, 5, 4),  -- Vino Tinto
 
   -- Venta 6 (30/11 - Noche)
-  (3, 0, 6, 13),  -- Cerveza 3 latas
+  (3, 0, 6, 7),  -- Cerveza 3 latas
   (2, 0, 6, 4),   -- Papas Fritas 2 bolsas
-  (1, 0, 6, 26),  -- Manzana Roja
+  (1, 0, 6, 2),  -- Manzana Roja
 
   -- Venta 7 (01/12 - Mañana)
   (1, 0, 7, 1),   -- Arroz
-  (1, 0, 7, 2),   -- Fideos
-  (1, 0, 7, 5),   -- Leche
-  (1, 0, 7, 16),  -- Aceite
+  (1, 0, 7, 4),   -- Fideos
+  (1, 0, 7, 8),   -- Leche
+  (1, 0, 7, 6),  -- Aceite
 
   -- Venta 8 (01/12 - Mediodía)
   (2, 0, 8, 3),   -- Coca-Cola 2 botellas
-  (1, 0, 8, 17),  -- Jugo Naranja
-  (1, 0, 8, 18),  -- Queso Mantecoso
+  (1, 0, 8, 9),  -- Jugo Naranja
+  (1, 0, 8, 4),  -- Queso Mantecoso
 
   -- Venta 9 (02/12 - Tarde)
-  (1, 0, 9, 19),  -- Jamón Cocido
-  (1, 0, 9, 20),  -- Pan Integral
-  (2, 0, 9, 22),  -- Pasta Dental 2 unidades
+  (1, 0, 9, 3),  -- Jamón Cocido
+  (1, 0, 9, 4),  -- Pan Integral
+  (2, 0, 9, 6),  -- Pasta Dental 2 unidades
 
   -- Venta 10 (02/12 - Tarde)
-  (1, 0, 10, 11),  -- Helado Vainilla
-  (1, 0, 10, 23),  -- Helado Chocolate
-  (1, 0, 10, 24),  -- Arena Gatos
+  (1, 0, 10, 4),  -- Helado Vainilla
+  (1, 0, 10, 7),  -- Helado Chocolate
+  (1, 0, 10, 9),  -- Arena Gatos
 
   -- Venta 11 (03/12 - Noche)
-  (4, 0, 11, 13),  -- Cerveza 4 latas
+  (4, 0, 11, 9),  -- Cerveza 4 latas
   (2, 0, 11, 4),   -- Papas Fritas 2 bolsas
-  (1, 0, 11, 14),  -- Plátano
+  (1, 0, 11, 2),  -- Plátano
 
   -- Venta 12 (04/12 - Mañana)
-  (2, 0, 12, 6),   -- Yoghurt 2 unidades
-  (1, 0, 12, 8),   -- Pan Hallulla
-  (1, 0, 12, 27),  -- Paracetamol
+  (2, 0, 12, 4),   -- Yoghurt 2 unidades
+  (1, 0, 12, 5),   -- Pan Hallulla
+  (1, 0, 12, 7),  -- Paracetamol
 
   -- Venta 13 (04/12 - Mediodía)
-  (1, 0, 13, 9),   -- Detergente Líquido
-  (1, 0, 13, 10),  -- Shampoo
-  (1, 0, 13, 21),  -- Detergente Polvo
+  (1, 0, 13, 1),   -- Detergente Líquido
+  (1, 0, 13, 4),  -- Shampoo
+  (1, 0, 13, 5),  -- Detergente Polvo
 
   -- Venta 14 (05/12 - Tarde)
-  (3, 0, 14, 13),  -- Cerveza 3 latas
-  (1, 0, 14, 25),  -- Vino Tinto
-  (1, 0, 14, 26),  -- Manzana Roja
+  (3, 0, 14, 9),  -- Cerveza 3 latas
+  (1, 0, 14,5),  -- Vino Tinto
+  (1, 0, 14, 3),  -- Manzana Roja
 
   -- Venta 15 (05/12 - Noche - Pendiente)
-  (1, 0, 15, 1),   -- Arroz
-  (1, 0, 15, 5),   -- Leche
-  (1, 0, 15, 14),  -- Plátano
+  (1, 0, 15, 3),   -- Arroz
+  (1, 0, 15, 6),   -- Leche
+  (1, 0, 15, 2),  -- Plátano
 
   -- Venta 16 (06/12 - Mañana)
-  (2, 0, 16, 2),   -- Fideos 2 packs
-  (1, 0, 16, 3),   -- Coca-Cola
-  (1, 0, 16, 7),   -- Salchichas
+  (2, 0, 16, 9),   -- Fideos 2 packs
+  (1, 0, 16, 4),   -- Coca-Cola
+  (1, 0, 16, 2),   -- Salchichas
 
   -- Venta 17 (06/12 - Tarde)
-  (1, 0, 17, 11),  -- Helado Vainilla
-  (1, 0, 17, 12),  -- Comida Perro
-  (1, 0, 17, 24),  -- Arena Gatos
+  (1, 0, 17, 1),  -- Helado Vainilla
+  (1, 0, 17, 8),  -- Comida Perro
+  (1, 0, 17, 4),  -- Arena Gatos
 
   -- Venta 18 (07/12 - Mañana)
-  (1, 0, 18, 16),  -- Aceite
-  (1, 0, 18, 17),  -- Jugo Naranja
-  (1, 0, 18, 18),  -- Queso
-  (1, 0, 18, 19),  -- Jamón
+  (1, 0, 18, 5),  -- Aceite
+  (1, 0, 18, 6),  -- Jugo Naranja
+  (1, 0, 18, 2),  -- Queso
+  (1, 0, 18, 3),  -- Jamón
 
   -- Venta 19 (08/12 - Mediodía)
-  (2, 0, 19, 13),  -- Cerveza 2 latas
-  (1, 0, 19, 20),  -- Pan Integral
-  (1, 0, 19, 22),  -- Pasta Dental
+  (2, 0, 19, 9),  -- Cerveza 2 latas
+  (1, 0, 19, 4),  -- Pan Integral
+  (1, 0, 19, 3),  -- Pasta Dental
 
   -- Venta 20 (09/12 - Tarde - Pendiente)
-  (1, 0, 20, 23),  -- Helado Chocolate
-  (2, 0, 20, 27),  -- Paracetamol 2 cajas
+  (1, 0, 20, 8),  -- Helado Chocolate
+  (2, 0, 20, 5),  -- Paracetamol 2 cajas
 
   -- Venta 21 (10/12 - Tarde)
-  (1, 0, 21, 9),   -- Detergente Líquido
-  (1, 0, 21, 10),  -- Shampoo
-  (1, 0, 21, 21),  -- Detergente Polvo
-  (1, 0, 21, 22),  -- Pasta Dental
-
+  (1, 0, 21, 3),   -- Detergente Líquido
+  (1, 0, 21, 5),  -- Shampoo
+  (1, 0, 21, 5),  -- Detergente Polvo
+  (1, 0, 21, 3),  -- Pasta Dental
   -- Venta 22 (10/12 - Noche)
-  (3, 0, 22, 13),  -- Cerveza 3 latas
-  (1, 0, 22, 4),   -- Papas Fritas
-  (1, 0, 22, 15),  -- Encendedor
+  (3, 0, 22, 9),  -- Cerveza 3 latas
+  (1, 0, 22, 3),   -- Papas Fritas
+  (1, 0, 22, 2),  -- Encendedor
 
   -- Venta 23 (11/12 - Mañana)
-  (1, 0, 23, 1),   -- Arroz
-  (1, 0, 23, 6),   -- Yoghurt
-  (1, 0, 23, 8),   -- Pan Hallulla
-  (1, 0, 23, 14),  -- Plátano
+  (1, 0, 23, 9),   -- Arroz
+  (1, 0, 23, 2),   -- Yoghurt
+  (1, 0, 23, 3),   -- Pan Hallulla
+  (1, 0, 23, 4),  -- Plátano
 
   -- Venta 24 (11/12 - Mediodía)
-  (1, 0, 24, 11),  -- Helado Vainilla
-  (1, 0, 24, 23),  -- Helado Chocolate
-  (1, 0, 24, 25),  -- Vino Tinto
+  (1, 0, 24, 7),  -- Helado Vainilla
+  (1, 0, 24, 8),  -- Helado Chocolate
+  (1, 0, 24, 2),  -- Vino Tinto
 
   -- Venta 25 (12/12 - Tarde)
-  (2, 0, 25, 13),  -- Cerveza 2 latas
-  (1, 0, 25, 26),  -- Manzana Roja
-  (1, 0, 25, 27),  -- Paracetamol
-  (1, 0, 25, 5);   -- Leche
+  (2, 0, 25, 4),  -- Cerveza 2 latas
+  (1, 0, 25, 6),  -- Manzana Roja
+  (1, 0, 25, 9),  -- Paracetamol
+  (1, 0, 25, 2);   -- Leche
 
 -- Ahora actualizamos los subtotales en detalle_venta (precio * cantidad)
 UPDATE detalle_venta dv

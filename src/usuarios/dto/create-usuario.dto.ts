@@ -3,6 +3,7 @@ import { IsEmail, IsEnum, IsNotEmpty, IsString } from 'class-validator';
 export enum Roles {
   cliente = 'cliente',
   admin = 'admin',
+  empleado = 'empleado'
 }
 
 export class CreateUsuarioDto {
