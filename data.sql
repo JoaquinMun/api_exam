@@ -26,7 +26,7 @@ http://localhost:3000/api/v1/auth/register
   { "nombre": "Valentina Rojas", "email": "valentina.rojas@gmail.com", "password": "valentina123", "rol": "cliente" },
   { "nombre": "Sebastián Muñoz", "email": "sebastian.munoz@gmail.com", "password": "sebastian123", "rol": "cliente" },
   { "nombre": "Camila Fernández", "email": "camila.fernandez@gmail.com", "password": "camila123", "rol": "cliente" },
-  { "nombre": "Matías González", "email": "matias.gonzalez@gmail.com", "password": "matias123", "rol": "cliente" },
+    { "nombre": "Matías González", "email": "matias.gonzalez@gmail.com", "password": "matias123", "rol": "cliente" },
   { "nombre": "Isidora Pérez", "email": "isidora.perez@gmail.com", "password": "isidora123", "rol": "cliente" },
   { "nombre": "Francisca Riquelme", "email": "francisca.riquelme@gmail.com", "password": "francisca123", "rol": "cliente" }
 
@@ -53,7 +53,7 @@ son conocidas por su textura firme y su sabor equilibrado entre dulce y ácido.'
 
 ('Plátanos Cavendish', 'Plátanos maduros y dulces, perfectos para el desayuno o como snack energético. Estos plátanos son ricos en potasio y vitaminas, ideales para mantener una dieta equilibrada.', 800, 250, 1),
 
-('Zanahorias Orgánicas', 'Zanahorias crujientes cultivadas sin pesticidas en la Región de O\'Higgins. Excelente fuente de vitamina A y fibra, ideales para ensaladas, jugos o como snack saludable.', 900, 100, 2),
+('Zanahorias Orgánicas', 'Zanahorias crujientes cultivadas sin pesticidas en la Región de OHiggins. Excelente fuente de vitamina A y fibra, ideales para ensaladas, jugos o como snack saludable.', 900, 100, 2),
 
 ('Espinacas Frescas', 'Espinacas frescas y nutritivas, perfectas para ensaladas y batidos verdes. Estas espinacas son cultivadas bajo prácticas orgánicas que garantizan su calidad y valor nutricional.', 700, 80, 2),
 
